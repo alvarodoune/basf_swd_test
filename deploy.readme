@@ -1,0 +1,9 @@
+# Para hacer login en la cloud
+heroku login
+
+# Para conectar el codigo con el repo de heroku (primera vez)
+heroku git:remote -a basf-gfaller
+
+# Para subir el codigo al repo, se despliga en este comando.
+git push heroku master
+
