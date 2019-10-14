@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="a25e08f7-4a11-4d11-b3cb-28fd04d42174" activeEnvironment="Default"
+                    name="WatsonAssistantBasfServiceDesk" resourceRoot="" soapui-version="5.5.0"
+                    xmlns:con="http://eviware.com/soapui/config">
+    <con:settings/>
+    <con:interface xsi:type="con:RestService" id="6b0c223c-3008-45f5-9d5b-016670b69a2f"
+                   wadlVersion="http://wadl.dev.java.net/2009/02" name="https://gateway-lon.watsonplatform.net"
+                   type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <con:settings/>
+        <con:definitionCache/>
+        <con:endpoints>
+            <con:endpoint>https://gateway-lon.watsonplatform.net</con:endpoint>
+        </con:endpoints>
+        <con:resource name="messages"
+                      path="/assistant/api/v2/assistants/{assistant_id}/sessions/{session_id}/message?version=2019-02-28"
+                      id="3d33fc30-0e32-46e4-91f4-84e7f0176339">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>assistant_id</con:name>
+                    <con:value>a</con:value>
+                    <con:style>TEMPLATE</con:style>
+                    <con:default>a</con:default>
+                </con:parameter>
+                <con:parameter>
+                    <con:name>session_id</con:name>
+                    <con:value>ed838abf-e968-4921-bee6-8020be81d6cb</con:value>
+                    <con:style>TEMPLATE</con:style>
+                    <con:default>ed838abf-e968-4921-bee6-8020be81d6cb</con:default>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="message" id="10581b15-8a92-45b4-a31b-bc55edcbd414" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="REQUEST">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>404 401</con:status>
+                    <con:params/>
+                    <con:element
+                            xmlns:mes="https://gateway-lon.watsonplatform.net/v2/assistants/62a85bcf-487e-4f42-a3bc-cea06fe818c3/sessions/306212d8-87a6-4b00-ad59-f1196789cfaf/message">
+                        mes:Fault
+                    </con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json; charset=utf-8</con:mediaType>
+                    <con:status>200</con:status>
+                    <con:params/>
+                    <con:element
+                            xmlns:mes="https://gateway-lon.watsonplatform.net/v2/assistants/62a85bcf-487e-4f42-a3bc-cea06fe818c3/sessions/306212d8-87a6-4b00-ad59-f1196789cfaf/message">
+                        mes:Response
+                    </con:element>
+                </con:representation>
+                <con:request name="send_input_to_assistant" id="9a7c4d8b-1d1e-4453-ae75-f2911c834ed2"
+                             mediaType="application/json" postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry
+                            key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>https://gateway-lon.watsonplatform.net</con:endpoint>
+                    <con:request>{"input": {"text": "Hello"}}</con:request>
+                    <con:originalUri>
+                        https://gateway-lon.watsonplatform.net/v2/assistants/62a85bcf-487e-4f42-a3bc-cea06fe818c3/sessions/306212d8-87a6-4b00-ad59-f1196789cfaf/message
+                    </con:originalUri>
+                    <con:credentials>
+                        <con:username>apikey</con:username>
+                        <con:password>efIGSPM2egVLwidwUGAqJaMafdj3fbkAhdcZ9z8Cg-Fc</con:password>
+                        <con:selectedAuthProfile>Basic</con:selectedAuthProfile>
+                        <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+                        <con:authType>Global HTTP Settings</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters>
+                        <con:entry key="assistant_id" value="62a85bcf-487e-4f42-a3bc-cea06fe818c3"/>
+                        <con:entry key="session_id" value="d7f1c6ac-b020-4275-baf6-12ba128b6154"/>
+                    </con:parameters>
+                    <con:parameterOrder>
+                        <con:entry>assistant_id</con:entry>
+                        <con:entry>session_id</con:entry>
+                    </con:parameterOrder>
+                </con:request>
+            </con:method>
+        </con:resource>
+        <con:resource name="sessions"
+                      path="/assistant/api/v2/assistants/62a85bcf-487e-4f42-a3bc-cea06fe818c3/sessions?version=2019-02-28"
+                      id="66cc3161-34d0-4f1c-8d1b-b0d26c9afdef">
+            <con:settings/>
+            <con:parameters>
+                <con:parameter>
+                    <con:name>assistant_id</con:name>
+                    <con:value>assistant_id</con:value>
+                    <con:style>TEMPLATE</con:style>
+                    <con:default>assistant_id</con:default>
+                </con:parameter>
+            </con:parameters>
+            <con:method name="session" id="74299465-065b-4c37-8d75-37a9507d43bf" method="POST">
+                <con:settings/>
+                <con:parameters/>
+                <con:representation type="REQUEST">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:params/>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType>text/html; charset=utf-8</con:mediaType>
+                    <con:status>407</con:status>
+                    <con:params/>
+                    <con:element>html</con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json</con:mediaType>
+                    <con:status>404</con:status>
+                    <con:params/>
+                    <con:element
+                            xmlns:ses="https://gateway-lon.watsonplatform.net/v2/assistants/3c793ecf-390e-4db8-b5fd-e95a424b5d07/sessions">
+                        ses:Fault
+                    </con:element>
+                </con:representation>
+                <con:representation type="FAULT">
+                    <con:mediaType>application/json; charset=utf-8</con:mediaType>
+                    <con:status>404</con:status>
+                    <con:params/>
+                    <con:element
+                            xmlns:ses="https://gateway-lon.watsonplatform.net/v2/assistants/3c793ecf-390e-4db8-b5fd-e95a424b5d07/sessions">
+                        ses:Fault
+                    </con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType>application/json; charset=utf-8</con:mediaType>
+                    <con:status>201</con:status>
+                    <con:params/>
+                    <con:element
+                            xmlns:ses="https://gateway-lon.watsonplatform.net/v2/assistants/3c793ecf-390e-4db8-b5fd-e95a424b5d07/sessions">
+                        ses:Response
+                    </con:element>
+                </con:representation>
+                <con:representation type="RESPONSE">
+                    <con:mediaType xsi:nil="true"/>
+                    <con:status>0</con:status>
+                    <con:params/>
+                    <con:element>data</con:element>
+                </con:representation>
+                <con:request name="create_session" id="cf3ad21d-c1eb-488f-8f8b-c09c9e340231"
+                             mediaType="application/json" postQueryString="false">
+                    <con:settings>
+                        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry
+                            key="apikey" value="efIGSPM2egVLwidwUGAqJaMafdj3fbkAhdcZ9z8Cg-Fc"
+                            xmlns="http://eviware.com/soapui/config"/>
+                        </con:setting>
+                    </con:settings>
+                    <con:endpoint>https://gateway-lon.watsonplatform.net</con:endpoint>
+                    <con:request/>
+                    <con:originalUri>
+                        https://gateway-lon.watsonplatform.net/v2/assistants/3c793ecf-390e-4db8-b5fd-e95a424b5d07/sessions
+                    </con:originalUri>
+                    <con:credentials>
+                        <con:username>apikey</con:username>
+                        <con:password>efIGSPM2egVLwidwUGAqJaMafdj3fbkAhdcZ9z8Cg-Fc</con:password>
+                        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+                        <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+                        <con:authType>No Authorization</con:authType>
+                    </con:credentials>
+                    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+                    <con:jmsPropertyConfig/>
+                    <con:parameters/>
+                </con:request>
+            </con:method>
+        </con:resource>
+    </con:interface>
+    <con:properties/>
+    <con:wssContainer/>
+    <con:oAuth2ProfileContainer/>
+    <con:oAuth1ProfileContainer/>
+</con:soapui-project>
