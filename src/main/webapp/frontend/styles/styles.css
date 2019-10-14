@@ -1,0 +1,134 @@
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+footer, header {
+    padding: 1rem;
+    color: #FFFFFF;
+    background-color: #21a0d2 !important;
+    font-family: "Palanquin", sans-serif;
+}
+
+header {
+    height: 4rem !important;
+    padding: 0 1rem;
+}
+
+footer {
+    height: 1rem !important;
+    bottom: 0;
+    width: calc(100% - 2rem);
+    position: fixed;
+    font-size: small;
+}
+
+footer div {
+    display: inline-block;
+}
+
+footer div span {
+    display: inline-block;
+}
+
+h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+h2 {
+    padding-top: 35px;
+    padding-bottom: 14px;
+}
+
+h3 {
+    padding-bottom: 11px;
+    padding-top: 27px;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.main-component {
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.my-button {
+    color: #FFFFFF;
+    background-color: rgba(33, 160, 210, 0.80);
+}
+
+.text-view {
+    height: calc(100% - 9rem);
+    font-family: "Palanquin", sans-serif;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+    margin-bottom: 3rem;
+    overflow-x: hidden;
+}
+
+
+vaadin-text-field.in-form, vaadin-combo-box.in-form {
+    width: 500px;
+    padding-right: 1rem;
+}
+
+.banner-img {
+    padding: 8px;
+    height: 48px;
+}
+
+.chat-message {
+    display: flow-root;
+    margin-bottom: 5px;
+}
+
+.chat-container {
+    width: 90%;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: #f39500;
+}
+
+.chat-container.pull-right {
+    background-color: #22bdf0;
+}
+
+.pull-right .chat-text {
+    font-weight: bold;
+}
+
+.chat-panel {
+    overflow-x: auto;
+    height: 300px;
+    max-width: 650px;
+}
+
+.chat-text {
+
+}
+
+.chat-date {
+    font-size: x-small;
+}
+
+@media (min-width: 400px) {
+    .chat-panel {
+        width: 400px;
+    }
+}
+
+@media (max-width: 800px) {
+    .hide-on-mobile {
+        display: none;
+    }
+}
