@@ -1,0 +1,28 @@
+@import "../../variables.scss";
+
+.privatehome-total-container {
+  width: 100%;
+}
+
+.privatehome-container-center {
+  margin: 0 auto;
+  width: $content_width;
+  min-width: auto;
+}
+
+.privatehome-dashboard-container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.privatehome-title {
+  > h3 {
+    border-bottom: 1px solid;
+    color: $primary;
+  }
+}
+
+.privatehome-text-center {
+  text-align: center;
+}
+

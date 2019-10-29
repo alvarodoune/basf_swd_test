@@ -1,0 +1,249 @@
+@import "../../variables.scss";
+
+.chatbot-total-container {
+  width: 100%;
+
+  &.onChatbotPage {
+    width: 900px;
+    margin: 0 auto;
+  }
+}
+
+.grid-container {
+  height: calc(100vh - 40px);
+  display: grid;
+  grid-template-columns: auto;
+  //grid-template-rows: 80% 20%;
+  // grid-gap: 2px;
+  padding: 0;
+  grid-template: "title" 10% "head" 70% "footer" 20%;
+
+  &.notOnChatbotPage {
+    grid-template: "head" 70% "footer" 30%;
+    height: 480px;
+  }
+}
+
+.grid-container > .grid-row {
+  //padding: 5px 0;
+  //display: grid;
+
+  &.title {
+    grid-area: title;
+  }
+
+  &.footer {
+    grid-area: footer;
+  }
+}
+
+.chat-container {
+  grid-area: head;
+  overflow-y: scroll;
+}
+
+.left {
+  text-align: left;
+  display: grid;
+}
+
+.right {
+  text-align: right;
+}
+
+.they {
+  text-align: left;
+  padding: 10px;
+  color: $black;
+  border-left: 2px solid #2c7cfb;
+}
+
+.me {
+  color: #d2d2d2;
+  padding: 10px;
+  display: inline-block;
+  background-color: #424747;
+  border-radius: 8px;
+  border: 1px solid #535a5a;
+  max-width: 90%;
+}
+
+.map-tab-group {
+  display: grid !important;
+}
+
+.chat-bot-title {
+  > h3 {
+    border-bottom: 1px solid;
+    color: $primary;
+  }
+}
+
+.chatbot-container {
+  position: relative;
+  height: calc(100vh - 110px);
+
+  &.notOnChatbotPage {
+    height: 100%;
+  }
+}
+
+.conversaton-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  position: relative;
+}
+
+.logo-center {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.chatbot-input {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid $gray;
+  padding: 10px 0;
+  outline: none;
+  border-radius: 3px;
+  margin: 15px 0;
+  color: $black;
+  font-size: 14px;
+}
+
+.tabs-group-container {
+  min-height: 240px;
+}
+
+.conversaton-container {
+  max-height: 69vh;
+  overflow-y: scroll;
+}
+
+.buttom-container {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+
+  &.notOnChatbotPage {
+    bottom: auto;
+  }
+}
+
+.chatbot-button {
+  width: 40%;
+  text-align: center;
+  margin: auto;
+  display: block;
+  background: $primary;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.options-button {
+  border: none;
+  background: $primary;
+  color: #F3F7FC;
+  margin: 0 0.5em 0.5em 0;
+  padding: 10px 20px;
+  border-radius: 500px;
+  transition: left 0.2s ease-in-out;
+  position: relative;
+  left: 0;
+  display: inline-block;
+  cursor: pointer;
+
+  &.border {
+    background: none;
+    color: $primary;
+    border: 1px solid;
+  }
+}
+
+.greenProgressBar ::ng-deep .mat-progress-bar-fill::after {
+  background-color: #227c22;
+}
+
+.greenProgressBar ::ng-deep .mat-progress-bar-buffer {
+  background: rgb(204, 255, 218);
+}
+
+::ng-deep .mat-progress-bar {
+  border-radius: 2px;
+}
+
+.bar-container {
+  margin-top: 10px;
+}
+
+.pdf-logo {
+  width: 35px;
+  margin-top: -7px;
+}
+
+.example-header-image {
+  margin-top: -13px;
+}
+
+.example-card {
+
+}
+
+.mat-card-title {
+  font-weight: bold;
+}
+
+.example-header-image {
+  background-image: url('../../assets/pdf_icon.png');
+  background-size: cover;
+}
+
+.viewFull {
+  cursor: pointer;
+  text-decoration: underline;
+  color: $primary;
+}
+
+.progress-bar-margin {
+  margin: 10px 0;
+}
+
+.form-grid-container {
+  display: grid;
+}
+
+/***************************** accordion *********************************/
+/*************************************************************************/
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  //background-color: #eee;
+  color: #444;
+  //cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}

@@ -1,0 +1,21 @@
+<div class="file-intake-container">
+  <div class="file-intake-title">
+    <h3>FILE INTAKE</h3>
+  </div>
+  <div class="file-intake-content">
+    <div class="file-form-center">
+      <form class="example-form">
+        <p>UPLOAD FILE</p>
+        <input type="file"
+               required>
+        <button mat-stroked-button color="primary"
+                (click)="uploadFile($event)"
+                class="file-button-sign-in">
+          <ng-template [ngIf]="!isBusy">Upload</ng-template>
+          <ng-template [ngIf]="!!isBusy">Uploading...</ng-template>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+

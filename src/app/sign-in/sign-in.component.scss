@@ -1,0 +1,79 @@
+@import "../../variables.scss";
+
+.sign-int-total-container {
+  //background-color: #333333b5;
+  display: inline-flex;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+}
+
+.sign-in-container {
+  width: 250px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.sign-in-input {
+  width: 100%;
+  background: white;
+  border: none;
+  padding: 10px 0;
+  outline: none;
+  border-radius: 3px;
+  margin: 5px 0;
+}
+
+.sign-in-show-pass {
+  color: white;
+  font-size: x-small;
+  padding: 10px 0 10px 10px;
+  text-align: right;
+}
+
+.sign-in-forgot-pass {
+  color: white;
+  font-size: x-small;
+  padding: 20px 0 0 0;
+  text-align: center;
+}
+.sign-in-create-new {
+  font-size: x-small;
+  padding: 5px 0 0 0;
+  text-align: center;
+  color: #00ADEF;
+  cursor: pointer;
+}
+
+.logo {
+  margin: 10px auto 30px auto;
+  max-width: 100%;
+}
+
+.button-sign-in {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  display: block;
+  background: $primary;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.tip {
+  color: #BABFC5;
+  font-size: small;
+}
+
+.error {
+  color: #ff0000;
+}
+

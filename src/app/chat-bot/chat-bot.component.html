@@ -1,0 +1,101 @@
+<div class="chatbot-total-container" [ngClass]="{'onChatbotPage': onChatbotPage()}">
+  <div class="grid-container" [ngClass]="{'notOnChatbotPage': !onChatbotPage()}">
+    <div class="chat-bot-title title" *ngIf="onChatbotPage()">
+      <h3>Rodio</h3>
+    </div>
+    <div #chatContainer class="grid-row chat-container">
+      <div *ngFor="let chat of watsonChats; index as i; first as isFirst">
+        <div *ngIf="chat.name == 'watson'" class="left">
+          <p class="they">{{chat.text}}</p>
+        </div>
+        <div *ngIf="chat.name == 'me'" class="right">
+          <p class="me">{{chat.text}}</p>
+        </div>
+        <div *ngIf="chat.name == 'option'" class="left">
+          <p class="they">{{chat.text}}</p>
+          <div *ngFor="let optionsList of chat.options; index as o;">
+            <div class="options-button" [ngClass]="{'border': optionsList.label == 'No'}"
+                 (click)="sendText(optionsList.value.input.text);">
+              {{optionsList.label}}
+            </div>
+          </div>
+        </div>
+        <div *ngIf="chat.name == 'image'" class="left">
+          <p class="they">{{chat.title}}</p>
+          <img src="{{chat.src}}" alt="{{chat.description}}">
+        </div>
+        <div *ngIf="chat.name == 'passages'" class="left">
+          <p class="they">Passages</p>
+          <div *ngFor="let item of chat.items">
+            <p>{{item.text}}</p>
+          </div>
+        </div>
+        <div *ngIf="chat.name == 'prediction'" class="left">
+          <p class="they">{{chat.text}}</p>
+          <div class="bar-container">
+            <label>Yes ({{chat.yes}}%)</label>
+            <mat-progress-bar color="warn" id="Yes" aria-labelledby="Yes" mode="determinate"
+                              value="{{chat.yes}}"></mat-progress-bar>
+          </div>
+          <div class="bar-container">
+            <label>No ({{chat.no}}%)</label>
+            <mat-progress-bar class="greenProgressBar" aria-label="No" aria-labelledby="No" mode="determinate"
+                              value="{{chat.no}}"></mat-progress-bar>
+          </div>
+        </div>
+        <div *ngIf="chat.name == 'attritionCost'" class="left">
+          <p class="they">{{chat.text}}<br>
+            <b>${{chat.cost}}</b></p>
+        </div>
+        <div *ngIf="chat.name == 'results'" class="left">
+          <p class="they">Results</p>
+          <div class="tabs-group-container">
+            <mat-tab-group dynamicHeight style="display: grid !important;">
+              <div *ngFor="let item of chat.items; index as t">
+                <mat-tab label="{{getLabelTab(t)}}">
+                  <div class="example-small-box mat-elevation-z4">
+                    <mat-card class="example-card">
+                      <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>{{item.header}}</mat-card-title>
+                      </mat-card-header>
+                      <mat-card-content>
+                        <p>
+                          {{item.passage}}
+                        </p>
+                      </mat-card-content>
+                      <mat-card-actions>
+                        <div style="text-align: right">
+                          <p class="viewFull" (click)="downloadFile(item.header)">
+                            View Full
+                          </p>
+                        </div>
+                      </mat-card-actions>
+                    </mat-card>
+                  </div>
+                </mat-tab>
+              </div>
+            </mat-tab-group>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid-row footer">
+      <form action="" class="form-grid-container">
+        <input class="chatbot-input" placeholder="Ask a question" [formControl]="text" required>
+        <button (click)="sendText()" [disabled]="isBusy"
+                class="chatbot-button">
+          <ng-template [ngIf]="!isBusy">Explore</ng-template>
+          <ng-template [ngIf]="isBusy">Asking Watson...</ng-template>
+        </button>
+      </form>
+      <mat-progress-bar
+        *ngIf="!!isBusy"
+        class="progress-bar-margin"
+        color="primary"
+        [mode]="'query'">
+      </mat-progress-bar>
+      <a href="" #download></a>
+    </div>
+  </div>
+</div>

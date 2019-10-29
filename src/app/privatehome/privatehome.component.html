@@ -1,0 +1,21 @@
+<div class="privatehome-total-container">
+  <div class="privatehome-container-center">
+    <div class="privatehome-title">
+      <h3>BASF - WE CREATE CHEMISTRY</h3>
+      <p class="privatehome-text-center" *ngIf="isLoading">loading...</p>
+      <div class="privatehome-dashboard-container" [hidden]="isLoading">
+        <iframe
+          (load)="frameLoaded($event)"
+          src="https://www.ibm.com/cloud/watson-assistant/"
+          width="1280"
+          height="850"
+          frameborder="0"
+          gesture="media"
+          allow="encrypted-media"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+    </div>
+  </div>
+</div>

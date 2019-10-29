@@ -1,0 +1,11 @@
+<div class="popup-chat-total-container" *ngIf="isSignedIn() && !onBootPage()">
+  <div class="chat" (click)="toggleChat()">
+    <span *ngIf="isHidden" class="d-star"></span>
+    <span *ngIf="!isHidden">X</span>
+  </div>
+  <div [hidden]="isHidden">
+    <div class="chat-container" [ngClass]="{'animate-zoom' : !isHidden}">
+      <app-chat-bot></app-chat-bot>
+    </div>
+  </div>
+</div>

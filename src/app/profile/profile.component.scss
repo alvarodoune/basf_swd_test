@@ -1,0 +1,35 @@
+@import "../../variables.scss";
+
+.profile-total-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+}
+
+.profile-title {
+  >h3 {
+    border-bottom: 1px solid;
+    color: $primary;
+  }
+}
+
+.profile-content {
+  width: $content_width;
+  margin: auto;
+}
+
+.profile-image {
+  border-radius: 100px;
+  margin: 15px;
+}
+
+.profile-header {
+  text-align: center;
+  //background-color: $primary;
+  background-image: linear-gradient(to bottom right, $primary, $black);
+}
+
+.mat-tab-label, .mat-tab-link {
+  color: #000 !important;
+}

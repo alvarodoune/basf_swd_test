@@ -1,0 +1,31 @@
+<div class="dashboard-content">
+  <div class="dashboard-title">
+    <h3>DASHBOARD</h3>
+  </div>
+
+  <!--<div class="custom-connector">-->
+  <!--<span class="dis-block">Payroll</span>-->
+  <!--<div class="custom-connector">-->
+  <!--<span class="dis-block">Survey</span>-->
+  <!--</div>-->
+  <!--<div class="custom-connector">-->
+  <!--<span class="dis-block">Time of</span>-->
+  <!--</div>-->
+  <!--</div>-->
+
+  <div class="center">
+    <p class="privatehome-text-center" *ngIf="isLoading">loading...</p>
+    <div class="privatehome-dashboard-container"
+         [hidden]="isLoading">
+      <iframe
+        (load)="frameLoaded($event)"
+        src="https://dataplatform.cloud.ibm.com/dashboards/5920603d-e034-46f5-9419-adc50d6b79dd/view/0566e90266ed2ff775c2f6e407992a062f332059e7bbd75584837b4906617297f33b10c7c82f185d8f435630f6eb105bca"
+        width="1500"
+        height="850"
+        frameborder="0"
+        gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+      <div class="iframeContainer" id="ddeDashboard">
+      </div>
+    </div>
+  </div>
+</div>

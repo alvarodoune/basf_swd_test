@@ -1,0 +1,107 @@
+@import "../../variables.scss";
+
+.home-total-container {
+  width: $content_width;
+  margin: auto;
+  //display: flex;
+  //flex-direction: column;
+}
+
+.home-center-container {
+  margin: 0 auto;
+  width: 730px;
+}
+
+.home-title {
+  >h3 {
+    border-bottom: 1px solid;
+    color: $primary;
+  }
+}
+
+.chart-content-left {
+  float: left;
+  width: 500px;
+  background-color: $primary;
+  height: 200px;
+  color: $white;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  margin: 5px;
+
+  > span {
+    margin: 0 auto;
+  }
+}
+
+.chart-content-right {
+  float: left;
+  width: 200px;
+  background-color: $primary;
+  height: 200px;
+  color: $white;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  margin: 5px;
+
+  > span {
+    margin: 0 auto;
+  }
+}
+
+.chart-high-level-metrics {
+  width: 710px;
+  background-color: $primary;
+  height: 150px;
+  color: $white;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  margin: 5px;
+
+  > span {
+    margin: 0 auto;
+  }
+}
+
+.news {
+  width: 350px;
+  background-color: $primary;
+  height: 150px;
+  color: $white;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  margin: 5px;
+
+  > span {
+    margin: 0 auto;
+  }
+}
+
+.helpful-articles {
+  width: 350px;
+  background-color: $primary;
+  height: 150px;
+  color: $white;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  margin: 5px;
+
+  > span {
+    margin: 0 auto;
+  }
+}

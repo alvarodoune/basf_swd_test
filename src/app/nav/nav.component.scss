@@ -1,0 +1,47 @@
+@import "../../variables.scss";
+
+.left-menu {
+  background-color: $black;
+  color: $white;
+  width: $nav_width;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  text-align: center;
+
+  img.left-menu-logo {
+    max-width: 90%;
+    margin: 10px auto;
+
+    &.onSignInPage {
+      visibility: hidden;
+    }
+  }
+
+  div.nav-item {
+    height: 33px;
+    width: 100%;
+    cursor: pointer;
+    padding: 0 16px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    outline: none;
+
+    &:hover {
+      border-left: 4px solid white;
+    }
+
+    &.sign-out {
+      margin-top: 25px;
+    }
+  }
+
+  div.activeLink {
+    border-left: 4px solid white;
+  }
+
+  .nav-items-container {
+    margin-top: 20px;
+  }
+}

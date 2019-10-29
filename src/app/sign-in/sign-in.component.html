@@ -1,0 +1,35 @@
+<div class="sign-int-total-container">
+  <div class="sign-in-container">
+    <img src="../../assets/logo-basf.JPG" alt="Basf - We create chemistry" class="logo">
+
+    <form action="">
+      <div>
+        <input class="sign-in-input" placeholder="USER" [formControl]="user" required>
+
+        <input class="sign-in-input" type="{{inputType}}" placeholder="PASSWORD" [formControl]="pass" required>
+        <div class="sign-in-show-pass">
+          <label for="showpassword">SHOW PASSWORD <input type="checkbox" id="showpassword"
+                                                         (click)="showPass($event)"></label>
+        </div>
+      </div>
+
+      <div>
+        <button
+          (click)="doSignIn()" [disabled]="isBusy"
+          class="button-sign-in">
+          <ng-template [ngIf]="!isBusy">Start Test</ng-template>
+          <ng-template [ngIf]="isBusy">Signing in, please wait...</ng-template>
+        </button>
+      </div>
+      <div class="sign-in-forgot-pass">
+        <span>FORGOT PASSWORD</span>
+      </div>
+      <div class="sign-in-create-new">
+        <span>CREATE NEW ACCOUNT</span>
+      </div>
+    </form>
+    <p class="tip">You can sign in with user "basf" and password "basf"</p>
+    <p class="error" *ngIf="!!hasFailed">{{error}}</p>
+    <img src="../../assets/watson-badge.png" alt="IBM Watson" class="badge">
+  </div>
+</div>

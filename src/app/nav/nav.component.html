@@ -1,0 +1,33 @@
+<nav class="left-menu">
+  <img class="left-menu-logo"
+       [ngClass]="{'onSignInPage': onSignInPage()}"
+       src="../../assets/logo-basf.JPG"
+       alt="Basf">
+  <div *ngIf="!isSignedIn()" class="nav-items-container">
+    <div class="nav-item" routerLink="/home" routerLinkActive="activeLink">
+      <span>Home</span>
+    </div>
+    <div class="nav-item" routerLink="/admin" routerLinkActive="activeLink">
+      <span>Admin</span>
+    </div>
+    <div class="nav-item" routerLink="/sign-in" routerLinkActive="activeLink">
+      <span>Sign In</span>
+    </div>
+  </div>
+  <!-- Private -->
+  <div *ngIf="isSignedIn()">
+    <div class="nav-item" routerLink="/privatehome" routerLinkActive="activeLink">
+      <span>Home</span>
+    </div>
+    <div class="nav-item" routerLink="/chatbot" routerLinkActive="activeLink">
+      <span>Chatbot</span>
+    </div>
+    <div class="nav-item" routerLink="/profile" routerLinkActive="activeLink">
+      <span>Admin</span>
+    </div>
+    <div class="nav-item sign-out" (click)="signOut()">
+      <span>Sign Out</span>
+    </div>
+  </div>
+</nav>
+

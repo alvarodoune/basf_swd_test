@@ -1,0 +1,72 @@
+@import "../variables.scss";
+
+.app-total-container {
+  height: 100%;
+}
+
+.header {
+  background-color: $primary;
+  color: #ffffff;
+  position: fixed;
+
+  > span {
+    font-size: 25px;
+  }
+}
+
+.content {
+  left: $nav_width;
+  right: 0;
+  top: 0;
+  bottom: $footer_height;
+  position: absolute;
+  background-color: $bone;
+
+  &.onSignInPage {
+    background: url(../assets/sign-in-bg.jpg) no-repeat top left;
+    background-size: cover;
+    //background-image: linear-gradient(to bottom right, #653a79, #333333);
+    left: 0;
+  }
+}
+
+.footer {
+  right: 0;
+  height: $footer_height;
+  background-color: $black;
+  position: fixed;
+  bottom: 0;
+  left: $nav_width;
+
+  &.onSignInPage {
+    left: 0;
+  }
+}
+
+.footer-align-left {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  color: white;
+  height: 100%;
+  font-size: small;
+  margin-left: 20px;
+}
+
+.footer-align-right {
+  color: white;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  font-size: small;
+  right: 20px;
+  position: absolute;
+
+  > a {
+    color: $white;
+  }
+}
+
